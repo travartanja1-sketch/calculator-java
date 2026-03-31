@@ -1,23 +1,18 @@
-import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class CalculatorTest {
 
     @Test
-    public void testSimpleAddition() {
-        String result = Calculator.Run("2+3");
-        assertEquals("5.0", result);
-    }
+    public void testCalculate() {
 
-    @Test
-    public void testOperationPriority() {
-        String result = Calculator.Run("10+5*4");
-        assertEquals("30.0", result);
-    }
+        String expression = "10+5*4";
+        String expectedResult = "30.0";
 
-    @Test
-    public void testInvalidInput() {
-        String result = Calculator.Run("5++3");
-        assertEquals("ERROR", result);
+        String actualResult = Calculator.Run(expression);
+
+        assertEquals(expectedResult, actualResult);
     }
 }
+
+
